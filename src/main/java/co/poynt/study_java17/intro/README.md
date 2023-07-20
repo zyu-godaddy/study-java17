@@ -1,7 +1,7 @@
 
 # Intro to Java 17 features (since Java 8)
 
-[var](./C1_Var_LocalVariableTypeReference.java)
+[var type](./C1_Var_LocalVariableTypeReference.java)
 
 [Text Block](./C2_TextBlock.java)
 

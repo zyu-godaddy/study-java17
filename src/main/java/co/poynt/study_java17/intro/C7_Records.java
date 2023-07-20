@@ -47,17 +47,25 @@ public class C7_Records {
 
     // It is lightweight.
     // Use it anywhere you find it brings convenience (and you will)
+    // Do not hesitate to define records when they are useful.
+    // Define records in the scope they are needed, e.g. in a method body.
+
+    // Use cases:
 
     // functions returning multiple values
     record NameValue(String name, int value){}
     NameValue parseLine(String line) {
         throw new Error("todo");
     }
+    // caller
+    {
+        var nv = parseLine("abc 123");
+    }
 
     // compound map keys/values
     void exampleMap() {
 
-        record Key(String s1, String s2){}
+        record Key(String type, String id){}
         record Val(int x, boolean flag){}
 
         var map = Map.of(
@@ -65,7 +73,7 @@ public class C7_Records {
         );
     }
 
-    // define data matrix, test fixture
+    // define data table, test fixture
     void someUnittest() {
 
         record Param(String id, boolean flag, int val){}

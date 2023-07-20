@@ -22,7 +22,7 @@ public class C1_Var_LocalVariableTypeReference {
             List<String> list = new ArrayList<>();
         }
 
-        // Now, local variables can be declared with `var` in place of the type
+        // Now, local variables can be declared with `var` type
         {
             var i = 123;
             var s = "abc";
@@ -36,7 +36,7 @@ public class C1_Var_LocalVariableTypeReference {
 
         // 'var' is for local variables only. Not for instance variables, method parameters, etc.
 
-        // 'var' is not final by default
+        // 'var' is not final by default; add 'final' if it's meant for a constant.
         {
             final var INF = Long.MAX_VALUE;
         }

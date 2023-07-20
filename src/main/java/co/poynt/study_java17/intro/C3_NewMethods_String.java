@@ -22,6 +22,15 @@ public class C3_NewMethods_String {
             Stream<String> lineStream = s.lines(); // .toList()
         }
 
+        // transform
+        {
+            String s = """
+                    i am calm
+                    """
+                    .transform(String::toUpperCase); // method chaining
+        }
+        //  f2(f1(arg)) vs. arg.f1().f2()
+
         // formatted()
         {
             String f = """
@@ -35,14 +44,6 @@ public class C3_NewMethods_String {
                 throw new Exception("Error: name:%s, value:%d".formatted("abc", 123));
             if (false)
                 throw new Exception(String.format("Error: name:%s, value:%d", "abc", 123));
-        }
-
-        // transform
-        {
-            String s = """
-                    i am calm
-                    """
-                    .transform(String::toUpperCase); // method chaining
         }
 
 

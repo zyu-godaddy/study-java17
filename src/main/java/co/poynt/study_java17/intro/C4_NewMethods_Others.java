@@ -31,7 +31,7 @@ public class C4_NewMethods_Others {
                     .toList(); // List<String>, immutable.
         }
 
-        // copyOf()
+        // copyOf() - immutable snapshot copy
         {
             Collection<String> source = new ArrayList<String>();
 
@@ -59,7 +59,12 @@ public class C4_NewMethods_Others {
                     entry("y", 25),
                     entry("z", 26)
             );
-            // do not call Map.of() instead! which yield entry->entry
+            // do not mistakenly call Map.of() here! which will yield a map of entry->entry
+
+            // empty ones
+            List.of();
+            Set.of();
+            Map.of();
         }
 
 

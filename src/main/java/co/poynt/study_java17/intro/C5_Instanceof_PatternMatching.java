@@ -24,8 +24,10 @@ public class C5_Instanceof_PatternMatching {
             }
         }
 
-        // the introduced variable is visible where it makes sense.
-        // follow your instinct
+        // `instanceof` is frowned upon in OOP. but it's not bad with sealed types.
+
+        // scope of an introduced variable
+        //   it is visible where it makes sense. follow your instinct.
 
         {
             if (obj instanceof String s && s.length()>10) {
@@ -36,7 +38,7 @@ public class C5_Instanceof_PatternMatching {
 
             }
 
-            // ternary operator
+            // ternary operator ?:
             var v1 = (obj instanceof String s) ? s.toLowerCase() : "NA";
             var v2 = !(obj instanceof String s) ? "NA" : s.toLowerCase();
 
