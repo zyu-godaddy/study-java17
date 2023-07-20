@@ -22,7 +22,7 @@ public class CollectionLiterals {
         );
         // ... up to 10 entries
 
-        Map.of(
+        Map.ofEntries(   // Map.of() here would be wrong....
                 entry("a",1),
                 entry("b", 2)
         );

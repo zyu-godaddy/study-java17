@@ -3,6 +3,9 @@ package co.poynt.study_java17.scratches;
 
 // https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.10
 
+// https://openjdk.org/projects/amber/design-notes/records-and-sealed-classes
+
+
 import java.util.Objects;
 
 public class Records {
@@ -39,7 +42,7 @@ public class Records {
     // method parameter and return type
     //    if it's only relevant to this method, no need to define it as a top-level type
     //    can be defined in the same place as the method.
-    //    ideally there should be anon record for that:  public (String name, int value) someFunction()
+    //    ideally there should be "anonymous" record for that:  public (String name, int value) someFunction()
     //
     public record NV(String name, int value){}
     public NV process(NV input){
@@ -49,8 +52,7 @@ public class Records {
     // in the big picture, record is to support algebraic datatypes
     // it's transparent on purpose. in particular, for deconstruction:  switch(){ case NV(name,value) ->
 
-    // extra methods
-
+    // extra methods in record class
     public record Item(String name) {
 
         public String nameUp(){
@@ -71,6 +73,7 @@ public class Records {
         }
     }
 
+    // constructors
     public record ItemB(String name, int value) {
 
         // normal, non-compact, explicit canonical constructor

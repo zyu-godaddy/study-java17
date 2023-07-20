@@ -2,6 +2,7 @@ package co.poynt.study_java17.scratches;
 
 import java.util.function.Function;
 
+// https://docs.oracle.com/javase/specs/jls/se17/html/jls-15.html#jls-15.28
 public class SwitchExpression {
 
    void basics() {
@@ -20,9 +21,70 @@ public class SwitchExpression {
             default -> "default";
         };
 
-        Function<Integer,String> i2s = i -> switch(i){
-            case 0 -> "0";
-            case 1 -> "1";
+        // can be 'void' type
+       switch(x) {
+           case 0 -> System.out.println("zero");
+           case 1 -> System.out.println("one");
+           // default -> System.out.println("many");
+       }
+       // technically, this is a switch *statement*
+       // default is not required
+
+       // switch statement, in the new form
+       switch(x) {
+           case 0 -> {
+               if (true)
+                   break;
+               System.out.println("false");
+               // no fall through here
+           }
+           case 1 -> {
+               System.out.println("1");
+           }
+           default -> {
+               System.out.println("default");
+           }
+       }
+
+       // switch expression, but in the old form + yield
+       s = switch(x) {
+           case 0:
+               yield "0";
+
+           case 1:
+           case 2, 3:
+               System.out.println(x);
+               // break;
+               yield "some";
+
+           case 4:
+               System.out.println("four");
+               // no yield
+               // fall through
+
+           default:
+               yield "default";
+       };
+
+       // this is apparently a statement
+       switch(x) {
+           case 0 -> Math.sin(1);
+           case 1 -> Math.cos(1);
+       }
+       // but could be an expression in a context where an expression is expected. (default is required then)
+
+       // no switch on boolean...
+       {
+//           int i = switch(true) {
+//               case true -> 1;
+//               case false -> 2;
+//           };
+       }
+
+
+       Function<Integer,String> i2s = i -> switch(i){
+            case 0 -> "zero";
+            case 1 -> "one";
             default -> "many";
         };
 
@@ -32,8 +94,9 @@ public class SwitchExpression {
         int y = switch (op) {
             case plus -> x+x;
             case mult -> x*x;
-            // no default
         };
+       // no default.
+       // NPE if op==null
 
     }
 
@@ -65,7 +128,6 @@ public class SwitchExpression {
             }
             default -> { yield "default"; }
         };
-
 
     }
 

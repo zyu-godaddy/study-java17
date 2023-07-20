@@ -50,7 +50,7 @@ public class SealedClasses {
     // Java-17 still lacks compiler support of exhaustive subtype enumeration,
     // see https://openjdk.org/jeps/406
     //     Completeness of pattern labels in switch expressions and statements
-    // It's available to Java-17 with `–enable-preview`
+    // It's available to Java-17 with `–enable-preview`. Finished in Java-21.
     // Otherwise, we still need a "default" clause.
     // nevertheless, refrain from using visitor pattern.
     // see a workaround:

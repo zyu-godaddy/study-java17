@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+// https://openjdk.org/projects/amber/guides/lvti-faq
+
 public class Var {
 
     void test() throws Exception {
@@ -15,6 +17,8 @@ public class Var {
 
         List<String> list1 = List.of("a", "b", "c");
         var list2 = List.of("a", "b", "c");
+
+        var var = "abc"; // allowed... but probably not a good idea
 
 
         List<String> list3 = new LinkedList<>();
@@ -55,6 +59,11 @@ public class Var {
         //
         // Style Guidelines for 'var'
         // https://openjdk.org/projects/amber/guides/lvti-style-guide
+
+        // https://openjdk.org/projects/amber/guides/lvti-faq
+        //   If the overhead of declaring a variable is high, developers will often avoid doing so,
+        //   and create complex nested or chained expressions that impair readability
+
 
         // Replace 'var' with explicit types before code review if it's a concern
         //   IntelliJ: Option+Return on 'var'

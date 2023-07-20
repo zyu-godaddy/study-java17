@@ -39,6 +39,7 @@ public class TextBlocks {
         //    - \<line-terminator> is translated to empty, joining line 3
 
         // escape triple DQ : \"""
+        // double DQ is fine:  { "comment": "" }
 
         // control indentation
         var s4 = """
@@ -51,13 +52,18 @@ public class TextBlocks {
         // however, the string ends with LF. may fix it with stripTrailing()
         // can add indent with indent(n)
 
-        // .formatted()
-        var s5 = """
-                name: %s
-                value: %d
-                """
-                .formatted("a", 1);
+        // no point for moving closing """ to the right
+        String s5 = """ 
+                    line 1
+                    line 2
+                       """;
+        // spaces on line 3 are removed (for being trailing spaces)
 
+
+        // a trick
+        String s7 = """
+                this string ends with SPACE but not LF \
+                """;
 
     }
 
