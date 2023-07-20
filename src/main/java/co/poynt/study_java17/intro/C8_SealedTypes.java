@@ -2,7 +2,6 @@ package co.poynt.study_java17.intro;
 
 public class C8_SealedTypes {
 
-
     // OOP is about extensibility
     // Java had either final class, or open interface
     interface Tmp{
@@ -30,7 +29,7 @@ public class C8_SealedTypes {
     // in general, do not make them complicated.
     //     use 'record' for leaf types.
     //     no instance methods, like eval()
-    // records and sealed types are anti-OOP; more like Functional Programming.
+    // records and sealed types are anti-OOP; more of Functional Programming.
 
     // define operations on sealed datatypes as library functions
     // eval(), simplify(), prettyPrint(), drawTree()
@@ -47,8 +46,20 @@ public class C8_SealedTypes {
         else // should not reach
             throw new IncompatibleClassChangeError();
     }
-    // switch expression? need Java 21.
-
     // visitor pattern - no longer needed
+
+    /*  Java 21:
+          release Sep 19 2023
+          long-term support (LTS)
+
+        public static int eval(Expr expr){
+            return switch(expr) {
+                case Val val -> val.v();
+                case Add add -> eval(add.l()) + eval(add.r());
+                case Mul mul -> eval(mul.l()) * eval(mul.r());
+            };
+        }
+     */
+
 
 }

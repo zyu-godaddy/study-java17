@@ -97,7 +97,7 @@ public class PatternMatchingForInstanceof {
                     ? "x".repeat(i)
                     : "na";
 
-            var v5 = Boolean.FALSE ? null
+            var v5 = obj==null ? null
                     : !(obj instanceof List<?> list) ? ""
                     : !(obj instanceof Set<?> set) ? ""+list.get(0)
                     : ""+list.get(0)+","+set.contains("a");

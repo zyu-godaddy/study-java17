@@ -28,7 +28,7 @@ public class C1_Var_LocalVariableTypeReference {
             var s = "abc";
             var list = new ArrayList<String>();
         }
-        // The local variables still have static types that are inferred by javac through context.
+        // The local variables still have static types that are inferred by javac from context.
         //
         // Notice that for `list`, <String> is no longer given on the left-hand-side,
         // therefore <String> must be provided on the right-hand-side.

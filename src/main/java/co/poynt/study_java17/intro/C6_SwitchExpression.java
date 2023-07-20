@@ -25,12 +25,14 @@ public class C6_SwitchExpression {
             String word = switch(x) {
                 case 0 -> "zero";
                 case 1 -> "one";
-                default -> "many"; // default is required
+                default -> "many";
             };
+            // default is required
         }
         // it is an expression that evaluates to a value
+        // (switch(x){...}).toUpperCase()
 
-        // multiple labels; exceptions
+        // multiple labels; exceptions;
         {
             String word = switch(x) {
                 case 1, 2 -> "few";
